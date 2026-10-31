@@ -17,14 +17,12 @@ import {
   Gauge,
   Sparkles,
 } from 'lucide-react';
-import { AboutPage } from './AboutPage';
 
 export const LoginPage: React.FC = () => {
   const { login, registerConsumer, quickDemoLogin, addToast } = useApp();
 
   const [isRegistering, setIsRegistering] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
 
   // Login form state
   const [email, setEmail] = useState('consumer@demo.com');
@@ -81,9 +79,7 @@ export const LoginPage: React.FC = () => {
     });
   };
 
-  return showAbout ? (
-    <AboutPage onBack={() => setShowAbout(false)} />
-  ) : (
+  return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       {/* Brand Header */}
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
@@ -100,31 +96,9 @@ export const LoginPage: React.FC = () => {
 
       <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-6 sm:px-8 shadow-xl shadow-slate-200/50 rounded-2xl border border-slate-200">
-          {/* Reset Demo Data */}
-          {!isRegistering && (
-             <button
-                type="button"
-                onClick={() => {
-                   if (window.confirm('Are you sure you want to reset all data to initial demo state?')) {
-                     resetToDemoData();
-                   }
-                }}
-                className="mb-4 text-xs text-rose-600 hover:underline cursor-pointer"
-             >
-                Reset Demo Data
-             </button>
-          )}
 
-          {/* About Link */}
-          {!isRegistering && (
-             <button
-                type="button"
-                onClick={() => setShowAbout(true)}
-                className="mb-4 text-xs text-blue-800 hover:underline cursor-pointer ml-4"
-             >
-                About PowerLink
-             </button>
-          )}
+
+
           
           {/* Form Switching */}
           {!isRegistering ? (
