@@ -82,17 +82,17 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ bill, onClose, onPay
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden my-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#142D4E]/60 backdrop-blur-xs overflow-y-auto animate-fade-in-up">
+      <div className="bg-white rounded-2xl max-w-lg w-full shadow-[0_20px_60px_rgba(20,45,78,0.25)] border border-slate-200/80 overflow-hidden my-6">
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-4 bg-slate-50 border-b border-slate-200">
+        <div className="flex items-center justify-between px-6 py-4 bg-[#F6F8FC] border-b border-slate-200/80">
           <div>
-            <h3 className="text-base font-bold text-slate-900">Pay Electricity Bill</h3>
-            <p className="text-xs text-slate-500">Bill #{bill.billNumber} • {bill.billingMonth}</p>
+            <h3 className="text-base font-bold text-[#142D4E]">Pay Electricity Bill</h3>
+            <p className="text-xs text-[#8491A5]">Bill #{bill.billNumber} • {bill.billingMonth}</p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200/60 transition-colors"
+            className="p-1.5 rounded-xl text-[#8491A5] hover:text-[#172B45] hover:bg-slate-200/50 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -100,15 +100,15 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ bill, onClose, onPay
 
         <form onSubmit={handleSubmit} className="p-6 space-y-5">
           {/* Amount Overview Card */}
-          <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center justify-between">
+          <div className="p-4 rounded-xl bg-[#2878F0]/5 border border-[#2878F0]/20 flex items-center justify-between">
             <div>
-              <div className="text-xs font-semibold text-blue-900 uppercase tracking-wider">Payable Amount</div>
-              <div className="text-2xl font-black text-blue-900">{formatPKR(bill.totalCurrentBill)}</div>
+              <div className="text-xs font-semibold text-[#2878F0] uppercase tracking-wider">Payable Amount</div>
+              <div className="text-2xl font-black text-[#142D4E] font-mono">{formatPKR(bill.totalCurrentBill)}</div>
             </div>
             <div className="text-right text-xs">
-              <span className="text-slate-500">Units Billed: </span>
-              <span className="font-bold text-slate-800">{bill.unitsConsumed} kWh</span>
-              <div className="text-red-600 font-medium">Due: {bill.dueDate}</div>
+              <span className="text-[#8491A5]">Units Billed: </span>
+              <span className="font-bold text-[#172B45]">{bill.unitsConsumed} kWh</span>
+              <div className="text-rose-600 font-medium">Due: {bill.dueDate}</div>
             </div>
           </div>
 
@@ -327,18 +327,18 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ bill, onClose, onPay
           </div>
 
           {/* Action buttons */}
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-200">
+          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
+              className="px-4 py-2.5 text-sm font-semibold text-[#172B45] bg-[#F6F8FC] hover:bg-slate-200/60 rounded-xl transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isProcessing}
-              className="px-6 py-2.5 text-sm font-bold text-white bg-blue-800 hover:bg-blue-900 disabled:opacity-50 rounded-xl shadow-md transition-colors cursor-pointer flex items-center gap-2"
+              className="px-6 py-2.5 text-sm font-bold text-white bg-[#2878F0] hover:bg-[#1f64d0] disabled:opacity-50 rounded-xl shadow-sm hover:shadow-md hover:shadow-[#2878F0]/25 transition-all cursor-pointer flex items-center gap-2"
             >
               {isProcessing ? 'Processing Transaction...' : `Confirm & Pay ${formatPKR(bill.totalCurrentBill)}`}
             </button>

@@ -96,18 +96,18 @@ export const ConsumerBills: React.FC<ConsumerBillsProps> = ({
   };
 
   return (
-    <div className="space-y-6 max-w-5xl">
+    <div className="space-y-6 max-w-5xl animate-fade-in-up">
       {/* Header & Sub-Tabs */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900">Bills & Payments</h2>
+          <h2 className="text-xl font-bold text-[#142D4E]">Bills & Payments</h2>
         </div>
 
-        <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200 text-xs">
+        <div className="flex items-center gap-1.5 p-1 bg-white rounded-xl border border-slate-200/80 text-xs shadow-xs">
           <button
             onClick={() => setActiveSubTab('invoices')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeSubTab === 'invoices' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'invoices' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <FileText className="w-3.5 h-3.5" />
@@ -115,8 +115,8 @@ export const ConsumerBills: React.FC<ConsumerBillsProps> = ({
           </button>
           <button
             onClick={() => setActiveSubTab('pay')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeSubTab === 'pay' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'pay' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <CreditCard className="w-3.5 h-3.5" />
@@ -124,8 +124,8 @@ export const ConsumerBills: React.FC<ConsumerBillsProps> = ({
           </button>
           <button
             onClick={() => setActiveSubTab('history')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeSubTab === 'history' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'history' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <History className="w-3.5 h-3.5" />

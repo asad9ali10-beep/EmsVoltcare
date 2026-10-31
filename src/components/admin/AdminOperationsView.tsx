@@ -12,30 +12,30 @@ export const AdminOperationsView: React.FC = () => {
   const pendingCount = complaints.filter(c => c.status === 'Pending').length;
 
   return (
-    <div className="space-y-6 max-w-7xl">
+    <div className="space-y-6 max-w-7xl animate-fade-in-up">
       {/* Sub-Tabs Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900">Operations & User Management</h2>
+          <h2 className="text-xl font-bold text-[#142D4E]">Operations & User Management</h2>
         </div>
 
-        <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200 text-xs">
+        <div className="flex items-center gap-1.5 p-1 bg-white rounded-xl border border-slate-200/80 text-xs shadow-xs">
           <button
             onClick={() => setActiveSubTab('complaints')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 relative ${
-              activeSubTab === 'complaints' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 relative ${
+              activeSubTab === 'complaints' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
             <span>Complaints</span>
             {pendingCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-500 rounded-full" />
+              <span className="w-2 h-2 bg-[#FFC857] rounded-full" />
             )}
           </button>
           <button
             onClick={() => setActiveSubTab('consumers')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeSubTab === 'consumers' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'consumers' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <Users className="w-3.5 h-3.5" />
@@ -43,8 +43,8 @@ export const AdminOperationsView: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveSubTab('technicians')}
-            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeSubTab === 'technicians' ? 'bg-blue-800 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+            className={`px-3.5 py-1.5 rounded-lg font-bold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+              activeSubTab === 'technicians' ? 'bg-[#2878F0] text-white shadow-xs' : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
             <Wrench className="w-3.5 h-3.5" />

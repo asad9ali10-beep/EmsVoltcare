@@ -182,7 +182,11 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col text-slate-800">
+    <div className="min-h-screen bg-[#F4F7FC] flex flex-col text-[#172B45] relative selection:bg-[#2878F0]/20 selection:text-[#142D4E]">
+      {/* Ambient subtle background details without clutter */}
+      <div className="pointer-events-none fixed top-0 right-0 w-[550px] h-[550px] bg-[#2878F0]/4 rounded-full blur-3xl -z-10" />
+      <div className="pointer-events-none fixed bottom-0 left-0 w-[550px] h-[550px] bg-[#48C6E8]/3 rounded-full blur-3xl -z-10" />
+
       {/* Top Navbar */}
       <Navbar
         onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}

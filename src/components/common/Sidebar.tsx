@@ -81,16 +81,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
   };
 
   const content = (
-    <div className="flex flex-col h-full bg-white border-r border-slate-200 w-64 lg:w-72 select-none">
+    <div className="flex flex-col h-full bg-white border-r border-slate-200/80 w-64 lg:w-72 select-none">
       {/* Role Banner */}
-      <div className="p-4 border-b border-slate-100 bg-slate-50/50">
+      <div className="p-4 border-b border-slate-100 bg-[#F6F8FC]/50">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-bold capitalize text-slate-900">{currentUser.role} Portal</span>
-          <span className="text-[10px] bg-blue-100 text-blue-900 font-semibold px-2 py-0.5 rounded-full">
+          <span className="text-sm font-bold capitalize text-[#142D4E]">{currentUser.role} Portal</span>
+          <span className="text-[10px] bg-[#2878F0]/10 text-[#2878F0] font-semibold px-2 py-0.5 rounded-full">
             PKR (Rs.)
           </span>
         </div>
-        <div className="text-xs text-slate-500 mt-0.5 truncate font-medium">
+        <div className="text-xs text-[#8491A5] mt-0.5 truncate font-medium">
           {currentUser.name}
         </div>
       </div>
@@ -104,20 +104,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
             <button
               key={item.id}
               onClick={() => handleSelectTab(item.id)}
-              className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
+              className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? 'bg-blue-800 text-white shadow-md shadow-blue-900/10'
-                  : 'text-slate-600 hover:text-blue-900 hover:bg-slate-100'
+                  ? 'bg-[#2878F0] text-white shadow-sm shadow-[#2878F0]/25'
+                  : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
               }`}
             >
               <div className="flex items-center gap-3">
-                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-amber-400' : 'text-slate-400'}`} />
+                <Icon className={`w-4 h-4 shrink-0 transition-colors ${isActive ? 'text-white' : 'text-[#8491A5]'}`} />
                 <span>{item.label}</span>
               </div>
               {item.badge !== undefined && (
                 <span
-                  className={`text-[11px] px-2 py-0.5 rounded-full font-bold ${
-                    item.badgeColor || 'bg-slate-100 text-slate-700'
+                  className={`text-[11px] px-2 py-0.5 rounded-full font-bold transition-colors ${
+                    isActive
+                      ? 'bg-white/20 text-white'
+                      : (item.badgeColor || 'bg-slate-100 text-[#172B45]')
                   }`}
                 >
                   {item.badge}
@@ -130,29 +132,29 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen, onCloseMobile })
         <div className="pt-3 mt-3 border-t border-slate-100">
           <button
             onClick={() => handleSelectTab('help')}
-            className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
+            className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${
               activeTab === 'help'
-                ? 'bg-blue-800 text-white shadow-md'
-                : 'text-slate-600 hover:text-blue-900 hover:bg-slate-100'
+                ? 'bg-[#2878F0] text-white shadow-sm shadow-[#2878F0]/25'
+                : 'text-[#8491A5] hover:text-[#172B45] hover:bg-[#F6F8FC]'
             }`}
           >
-            <HelpCircle className={`w-4 h-4 shrink-0 ${activeTab === 'help' ? 'text-amber-400' : 'text-slate-400'}`} />
+            <HelpCircle className={`w-4 h-4 shrink-0 transition-colors ${activeTab === 'help' ? 'text-white' : 'text-[#8491A5]'}`} />
             <span>Help & Support</span>
           </button>
         </div>
       </nav>
 
       {/* Emergency Helpline */}
-      <div className="px-4 py-2.5 mx-3 mb-2 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-between text-xs">
-        <span className="font-semibold text-slate-700">Helpline:</span>
-        <span className="font-mono font-bold text-red-600">Dial 118</span>
+      <div className="px-4 py-2.5 mx-3 mb-2 rounded-xl bg-[#FFC857]/15 border border-[#FFC857]/35 flex items-center justify-between text-xs">
+        <span className="font-semibold text-[#172B45]">Helpline:</span>
+        <span className="font-mono font-bold text-[#142D4E]">Dial 118</span>
       </div>
 
       {/* Bottom Logout */}
-      <div className="p-3 border-t border-slate-200">
+      <div className="p-3 border-t border-slate-100">
         <button
           onClick={logout}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-bold text-red-600 hover:bg-red-50 rounded-xl transition-colors cursor-pointer"
+          className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-bold text-red-600 hover:bg-red-50/70 rounded-xl transition-colors cursor-pointer"
         >
           <LogOut className="w-4 h-4" />
           <span>Logout</span>

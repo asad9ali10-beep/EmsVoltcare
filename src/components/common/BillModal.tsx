@@ -18,12 +18,12 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden my-8 print-page">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#142D4E]/60 backdrop-blur-xs overflow-y-auto animate-fade-in-up">
+      <div className="bg-white rounded-2xl max-w-3xl w-full shadow-[0_20px_60px_rgba(20,45,78,0.25)] border border-slate-200/80 overflow-hidden my-8 print-page">
         {/* Modal Top Actions (Hidden in print) */}
-        <div className="flex items-center justify-between px-6 py-4 bg-slate-50 border-b border-slate-200 no-print">
+        <div className="flex items-center justify-between px-6 py-4 bg-[#F6F8FC] border-b border-slate-200/80 no-print">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono font-bold bg-blue-100 text-blue-900 px-2.5 py-1 rounded-md">
+            <span className="text-xs font-mono font-bold bg-[#2878F0]/10 text-[#2878F0] px-2.5 py-1 rounded-lg">
               {bill.billNumber}
             </span>
             <Badge status={bill.status} size="sm" />
@@ -32,9 +32,9 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 rounded-lg shadow-2xs transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-[#172B45] bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-xs transition-colors cursor-pointer"
             >
-              <Printer className="w-3.5 h-3.5" />
+              <Printer className="w-3.5 h-3.5 text-[#8491A5]" />
               Print / Save PDF
             </button>
             {bill.status !== 'Paid' && onPayNow && (
@@ -43,7 +43,7 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
                   onClose();
                   onPayNow(bill);
                 }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-800 hover:bg-blue-900 rounded-lg shadow-2xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-[#2878F0] hover:bg-[#1f64d0] rounded-xl shadow-xs transition-all cursor-pointer"
               >
                 Pay This Bill
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -51,7 +51,7 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
             )}
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200/60 transition-colors"
+              className="p-1.5 rounded-xl text-[#8491A5] hover:text-[#172B45] hover:bg-slate-200/50 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -59,18 +59,18 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
         </div>
 
         {/* Official Bill Document Layout */}
-        <div className="p-6 md:p-8 space-y-6 text-slate-800 bg-white">
+        <div className="p-6 md:p-8 space-y-6 text-[#172B45] bg-white">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b-2 border-blue-900 gap-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b-2 border-[#142D4E] gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-blue-800 text-amber-400 flex items-center justify-center shadow-md">
-                <Zap className="w-7 h-7 fill-amber-400" />
+              <div className="w-12 h-12 rounded-xl bg-[#142D4E] text-[#FFC857] flex items-center justify-center shadow-md">
+                <Zap className="w-7 h-7 fill-[#FFC857]" />
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-black text-blue-950 tracking-tight flex items-center gap-2">
-                  PowerLink <span className="text-xs bg-amber-400 text-slate-900 font-extrabold px-2 py-0.5 rounded">ELECTRIC</span>
+                <h1 className="text-xl md:text-2xl font-black text-[#142D4E] tracking-tight flex items-center gap-2">
+                  PowerLink <span className="text-xs bg-[#FFC857] text-[#142D4E] font-extrabold px-2 py-0.5 rounded">UTILITY</span>
                 </h1>
-                <p className="text-xs text-slate-500 font-medium">Electricity Distribution & Supply Authority (WAPDA / NEPRA Registered)</p>
+                <p className="text-xs text-[#8491A5] font-medium">Electricity Distribution & Supply Authority (WAPDA / NEPRA Registered)</p>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
 
           {/* Meter Readings Table */}
           <div className="overflow-hidden rounded-xl border border-slate-200">
-            <div className="bg-blue-900 text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
+            <div className="bg-blue-800 text-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest">
               Meter Reading & Consumption
             </div>
             <table className="w-full text-xs text-left">
@@ -150,7 +150,7 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
           {/* Slab Breakdown */}
           {bill.slabBreakdown && bill.slabBreakdown.length > 0 && (
             <div className="overflow-hidden rounded-xl border border-slate-200">
-              <div className="bg-slate-100 text-slate-800 px-4 py-2 text-xs font-bold uppercase tracking-wider border-b border-slate-200">
+              <div className="bg-slate-100 text-slate-800 px-4 py-2 text-[11px] font-bold uppercase tracking-widest border-b border-slate-200">
                 Government Slab-wise Tariff Breakdown
               </div>
               <table className="w-full text-xs text-left">
@@ -264,8 +264,8 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
               </div>
               <span className="font-mono text-[10px] text-slate-500">{bill.billNumber}</span>
             </div>
-            <div className="text-center md:text-right text-[11px] text-slate-500">
-              24/7 Helpline: 118 • SMS: 8118 • complaints@voltcare.gov.pk
+            <div className="text-center md:text-right text-[11px] text-[#8491A5]">
+              24/7 Helpline: 118 • SMS: 8118 • complaints@powerlink.gov.pk
             </div>
           </div>
         </div>
