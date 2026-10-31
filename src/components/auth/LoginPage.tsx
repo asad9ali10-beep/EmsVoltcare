@@ -91,7 +91,7 @@ export const LoginPage: React.FC = () => {
           <Zap className="w-8 h-8 fill-amber-400" />
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-blue-950 tracking-tight">
-          VoltCare
+          PowerLink
         </h1>
         <p className="mt-1 text-xs sm:text-sm text-slate-500 font-medium">
           Electricity Management System
@@ -122,7 +122,7 @@ export const LoginPage: React.FC = () => {
                 onClick={() => setShowAbout(true)}
                 className="mb-4 text-xs text-blue-800 hover:underline cursor-pointer ml-4"
              >
-                About VoltCare
+                About PowerLink
              </button>
           )}
           
@@ -343,7 +343,7 @@ export const LoginPage: React.FC = () => {
 
         {/* Clean Launch Footer */}
         <div className="mt-6 text-center text-xs text-slate-400">
-          VoltCare EMS • 24/7 Helpline: <strong className="text-slate-600 font-mono">118</strong>
+          PowerLink EMS • 24/7 Helpline: <strong className="text-slate-600 font-mono">118</strong>
         </div>
       </div>
     </div>

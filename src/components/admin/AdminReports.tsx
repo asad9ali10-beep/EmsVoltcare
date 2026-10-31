@@ -56,7 +56,7 @@ export const AdminReports: React.FC = () => {
               <Zap className="w-7 h-7 fill-amber-400" />
             </div>
             <div>
-              <h1 className="text-2xl font-black text-blue-950">VoltCare Electric Supply Company</h1>
+              <h1 className="text-2xl font-black text-blue-950">PowerLink Electric Supply Company</h1>
               <p className="text-xs text-slate-500 font-medium">Sub-Divisional Operations HQ • Monthly Performance Report</p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export const AdminReports: React.FC = () => {
             <span>Sub-Divisional Officer (SDO) - Operations</span>
           </div>
           <div className="text-right">
-            <span className="block font-mono">VoltCare Central Database</span>
+            <span className="block font-mono">PowerLink Central Database</span>
             <span>Document generated automatically from system ledger</span>
           </div>
         </div>

@@ -8,9 +8,9 @@ export const AboutPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         <button onClick={onBack} className="flex items-center gap-2 text-blue-800 text-xs font-bold mb-6 hover:underline cursor-pointer">
           <ArrowLeft className="w-4 h-4" /> Back to Login
         </button>
-        <h1 className="text-2xl font-black text-blue-950 mb-4">About VoltCare</h1>
+        <h1 className="text-2xl font-black text-blue-950 mb-4">About PowerLink</h1>
         <p className="text-sm text-slate-600 mb-6">
-          VoltCare - Electricity Management System.
+          PowerLink - Electricity Management System.
           Built for a university course project at <strong>UET Lahore</strong>.
         </p>
         <div className="space-y-2 text-xs text-slate-500">

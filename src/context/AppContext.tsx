@@ -416,7 +416,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       {
         id: `notif-${Date.now()}`,
         recipientId: newConsumerId,
-        title: 'Welcome to VoltCare!',
+        title: 'Welcome to PowerLink!',
         message: `Your consumer connection (#${newConsumer.consumerNumber}) is active. Your October bill has been generated.`,
         type: 'system',
         timestamp: new Date().toISOString().replace('T', ' ').slice(0, 16),

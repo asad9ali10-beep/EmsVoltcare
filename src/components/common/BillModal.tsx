@@ -68,7 +68,7 @@ export const BillModal: React.FC<BillModalProps> = ({ bill, onClose, onPayNow })
               </div>
               <div>
                 <h1 className="text-xl md:text-2xl font-black text-blue-950 tracking-tight flex items-center gap-2">
-                  VoltCare <span className="text-xs bg-amber-400 text-slate-900 font-extrabold px-2 py-0.5 rounded">ELECTRIC</span>
+                  PowerLink <span className="text-xs bg-amber-400 text-slate-900 font-extrabold px-2 py-0.5 rounded">ELECTRIC</span>
                 </h1>
                 <p className="text-xs text-slate-500 font-medium">Electricity Distribution & Supply Authority (WAPDA / NEPRA Registered)</p>
               </div>

@@ -83,7 +83,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ payment, onClose }) 
 
           <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-center flex items-center justify-center gap-2 text-xs text-blue-900">
             <Zap className="w-4 h-4 text-amber-500 shrink-0" />
-            <span>VoltCare Electric Supply Authority • System Reconciled</span>
+            <span>PowerLink Electric Supply Authority • System Reconciled</span>
           </div>
 
           <div className="no-print pt-2">

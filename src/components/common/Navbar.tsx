@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileSidebar, isMobileS
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xl font-black text-blue-900 tracking-tight">VoltCare</span>
+                <span className="text-xl font-black text-blue-900 tracking-tight">PowerLink</span>
                 <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-blue-100 text-blue-900">
                   EMS
                 </span>

@@ -1,6 +1,6 @@
-# VoltCare - Electricity Management System
+# PowerLink - Electricity Management System
 
-VoltCare is a simple, clean, beginner-friendly electricity utility management portal (inspired by WAPDA / K-Electric) built with **React**, **Vite**, **Tailwind CSS**, and **localStorage** for state persistence. It is fully frontend-only and ready for static deployment on Vercel.
+PowerLink is a simple, clean, beginner-friendly electricity utility management portal (inspired by WAPDA / K-Electric) built with **React**, **Vite**, **Tailwind CSS**, and **localStorage** for state persistence. It is fully frontend-only and ready for static deployment on Vercel.
 
 ---
 
